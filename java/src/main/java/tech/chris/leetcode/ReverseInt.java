@@ -8,7 +8,19 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
  */
 public final class ReverseInt implements ISolution {
     public static int solution(int x) {
-        // TODO: implement
-        throw new NotImplementedException();
+        String reversedIntChars = "";
+        String intChars = String.valueOf(x);
+        if (x < 0) {
+            reversedIntChars = "-";
+            intChars = intChars.replaceFirst("-", "");
+        }
+
+        for (int i = intChars.length() - 1; i >= 0; i--) {
+            reversedIntChars += intChars.charAt(i);
+        }
+
+        long result = Long.parseLong(reversedIntChars);
+
+        return result > Integer.MAX_VALUE || result < Integer.MIN_VALUE ? 0 : (int)result;
     }
 }

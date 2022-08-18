@@ -5,6 +5,7 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 //Given an integer x,return true if x is palindrome integer.
 //An integer is a palindrome when it reads the same backward as forward.
 public class IsPalindrome implements ISolution {
+    // TODO: re-implement with math
     public static boolean solution(final int x) {
         if (x < 0) {
             return false;

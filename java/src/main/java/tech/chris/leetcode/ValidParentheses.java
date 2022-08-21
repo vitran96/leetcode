@@ -33,6 +33,7 @@ public class ValidParentheses implements ISolution {
         }
     }
 
+    // TODO: need optimization
     public boolean isValid(String s) {
         Stack<String> parentheses = new Stack<>();
         String[] strings = s.split("");

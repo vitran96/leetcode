@@ -1,7 +1,5 @@
 package tech.chris.leetcode;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 import java.util.Arrays;
 import java.util.Comparator;
 
@@ -15,8 +13,8 @@ public final class LongestCommonPrefix {
             return prefix;
         }
 
-        for (String str: strs) {
-            while(!str.startsWith(prefix)) {
+        for (String str : strs) {
+            while (!str.startsWith(prefix)) {
                 if (prefix.length() == 1) {
                     prefix = "";
                 } else {

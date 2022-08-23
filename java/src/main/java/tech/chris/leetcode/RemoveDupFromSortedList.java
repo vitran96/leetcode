@@ -12,6 +12,7 @@ import java.util.Set;
 //
 //Do not allocate extra space for another array.You must do this by modifying the input array in-place with O(1)extra memory.
 public class RemoveDupFromSortedList implements ISolution {
+    // TODO: this is not bad. But could be better
     public int removeDuplicates (int[] nums) {
         Set<Integer> uniqueNums = new LinkedHashSet<>();
         for (int n : nums) {

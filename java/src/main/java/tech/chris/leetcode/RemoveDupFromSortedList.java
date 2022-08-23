@@ -1,6 +1,8 @@
 package tech.chris.leetcode;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 //Given an integer array nums sorted in non-decreasing order,remove the duplicates in-place such that each unique element appears only once.The relative order of the elements should be kept the same.
 //
@@ -11,7 +13,18 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 //Do not allocate extra space for another array.You must do this by modifying the input array in-place with O(1)extra memory.
 public class RemoveDupFromSortedList implements ISolution {
     public int removeDuplicates (int[] nums) {
-        // TODO:
-        throw new NotImplementedException();
+        Set<Integer> uniqueNums = new LinkedHashSet<>();
+        for (int n : nums) {
+            uniqueNums.add(n);
+        }
+
+        Iterator<Integer> uniqueNumsIter = uniqueNums.iterator();
+        int i = 0;
+        while (uniqueNumsIter.hasNext()) {
+            nums[i] = uniqueNumsIter.next();
+            i++;
+        }
+
+        return uniqueNums.size();
     }
 }

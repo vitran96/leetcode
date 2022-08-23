@@ -16,7 +16,7 @@ public class RemoveDupFromSortedListTest {
     public void test (@ConvertWith(IntArrayConverter.class) int[] input, int expected1,
                       @ConvertWith(IntArrayConverter.class) int[] expected2) {
         Assertions.assertEquals(expected1, new RemoveDupFromSortedList().removeDuplicates(input));
-        Assertions.assertEquals(expected2, Arrays.stream(input).limit(expected1).toArray());
+        Assertions.assertArrayEquals(expected2, Arrays.stream(input).limit(expected1).toArray());
     }
 
     public final static class IntArrayConverter extends SimpleArgumentConverter {

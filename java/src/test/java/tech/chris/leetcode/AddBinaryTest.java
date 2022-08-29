@@ -7,7 +7,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 public class AddBinaryTest {
 
     @ParameterizedTest
-    @CsvSource({"11,1,100", "1010,1011,10101"})
+    @CsvSource({"11,1,100", "1010,1011,10101", "1111,1111,11110"})
     public void test (String input1, String input2, String expected) {
         Assertions.assertEquals(expected, new AddBinary().addBinary(input1, input2));
     }

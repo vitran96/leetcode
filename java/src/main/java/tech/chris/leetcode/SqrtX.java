@@ -6,6 +6,7 @@ package tech.chris.leetcode;
 //
 //Note:You are not allowed to use any built-in exponent function or operator,such as pow(x,0.5)or x**0.5.
 public class SqrtX implements ISolution {
+    // TODO: try optimize with binary search
     public int mySqrt (int x) {
         if (x == 0) {
             return 0;

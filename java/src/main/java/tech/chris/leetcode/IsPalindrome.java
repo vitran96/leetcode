@@ -2,9 +2,9 @@ package tech.chris.leetcode;
 
 //Given an integer x,return true if x is palindrome integer.
 //An integer is a palindrome when it reads the same backward as forward.
-public class IsPalindrome implements ISolution {
+public class IsPalindrome {
     // TODO: re-implement with math
-    public static boolean solution(final int x) {
+    public static boolean solution (final int x) {
         if (x < 0) {
             return false;
         }

@@ -8,8 +8,8 @@ import java.util.Stack;
 //
 //    Open brackets must be closed by the same type of brackets.
 //    Open brackets must be closed in the correct order.
-public class ValidParentheses implements ISolution {
-    private static String getExpectedBracket(String s) {
+public class ValidParentheses {
+    private static String getExpectedBracket (String s) {
         switch (s) {
             case "{":
                 return "}";
@@ -22,7 +22,7 @@ public class ValidParentheses implements ISolution {
         }
     }
 
-    private static boolean isCloseBracket(String s) {
+    private static boolean isCloseBracket (String s) {
         switch (s) {
             case "}":
             case "]":
@@ -34,7 +34,7 @@ public class ValidParentheses implements ISolution {
     }
 
     // TODO: need optimization
-    public boolean isValid(String s) {
+    public boolean isValid (String s) {
         Stack<String> parentheses = new Stack<>();
         String[] strings = s.split("");
         for (String str : strings) {

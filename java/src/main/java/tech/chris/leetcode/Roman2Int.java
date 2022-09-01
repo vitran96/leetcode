@@ -30,7 +30,7 @@ import java.util.Set;
 //    I can be placed before V(5)and X(10)to make 4and 9.
 //    X can be placed before L(50)and C(100)to make 40and 90.
 //    C can be placed before D(500)and M(1000)to make 400and 900.
-public class Roman2Int implements ISolution {
+public class Roman2Int {
     private static final Map<String, Integer> ROMAN_LETTERS = new HashMap<String, Integer>() {{
         put("I", 1);
         put("V", 5);
@@ -58,7 +58,7 @@ public class Roman2Int implements ISolution {
 
     // TODO: this can be simplify without using MAP or SET
     // I will assume that there is no incorrect Roman pass in
-    public static int solution(String s) {
+    public static int solution (String s) {
         int result = 0;
         String[] strings = s.split("");
         String lastStr = "";

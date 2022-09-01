@@ -11,7 +11,7 @@ import java.util.Set;
 //Return k after placing the final result in the first k slots of nums.
 //
 //Do not allocate extra space for another array.You must do this by modifying the input array in-place with O(1)extra memory.
-public class RemoveDupFromSortedList implements ISolution {
+public class RemoveDupFromSortedList {
     // TODO: this is not bad. But could be better
     public int removeDuplicates (int[] nums) {
         Set<Integer> uniqueNums = new LinkedHashSet<>();

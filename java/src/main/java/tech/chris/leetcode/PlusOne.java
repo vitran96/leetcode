@@ -6,7 +6,7 @@ package tech.chris.leetcode;
 // The large integer does not contain any leading 0's.
 //
 // Increment the large integer by one and return the resulting array of digits.
-public class PlusOne implements ISolution {
+public class PlusOne {
     public int[] plusOne (int[] digits) {
         boolean hasRemain = false;
         for (int i = digits.length - 1; i >= 0; i--) {

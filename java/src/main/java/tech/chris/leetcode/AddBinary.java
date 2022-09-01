@@ -1,6 +1,6 @@
 package tech.chris.leetcode;
 
-public class AddBinary implements ISolution {
+public class AddBinary {
     public String addBinary (String a, String b) {
         StringBuilder result = new StringBuilder();
         char[] aChars = a.toCharArray();

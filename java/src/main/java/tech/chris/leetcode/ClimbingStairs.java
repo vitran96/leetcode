@@ -6,11 +6,26 @@ package tech.chris.leetcode;
 //
 // 1 <= n <= 45
 public class ClimbingStairs {
+//    // O(2^n)
+//    public int climbStairs (int n) {
+//        if (n <= 2) {
+//            return n;
+//        }
+//
+//        return climbStairs(n - 2) + climbStairs(n - 1);
+//    }
+
+    // O(n)
     public int climbStairs (int n) {
-        if (n <= 2) {
-            return n;
+        int previous = 0;
+        int current = 1;
+
+        for (int i = 1; i <= n; i++) {
+            final int temp = current;
+            current += previous;
+            previous = temp;
         }
 
-        return climbStairs(n - 2) + climbStairs(n - 1);
+        return current;
     }
 }

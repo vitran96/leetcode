@@ -20,7 +20,7 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 // 1 <= m + n <= 200
 // -10^9 <= nums1[i], nums2[j] <= 10^9
 public class MergeSortedArray {
-    public void merge (int[] nums1, int[] nums2, int n) {
+    public void merge (int[] nums1, int m, int[] nums2, int n) {
         // TODO:
         throw new NotImplementedException();
     }

@@ -8,12 +8,13 @@ import org.junit.jupiter.params.provider.CsvSource;
 public class MergeSortedArrayTest {
 
     @ParameterizedTest
-    @CsvSource({""})
-    public void test (@ConvertWith(IntArrayConverter.class) int[] input1,
-                      @ConvertWith(IntArrayConverter.class) int[] input2,
-                      int input3,
+    @CsvSource({"'1,2,3,0,0,0',3,'2,5,6',3,'1,2,2,3,5,6'", "'1',1,'',0,'1'", "'0',0,'1',1,'1'"})
+    public void test (@ConvertWith(IntArrayConverter.class) int[] nums1,
+                      int m,
+                      @ConvertWith(IntArrayConverter.class) int[] nums2,
+                      int n,
                       @ConvertWith(IntArrayConverter.class) int[] expected) {
-        new MergeSortedArray().merge(input1, input2, input3);
-        Assertions.assertArrayEquals(expected, input1);
+        new MergeSortedArray().merge(nums1, m, nums2, n);
+        Assertions.assertArrayEquals(expected, nums1);
     }
 }

@@ -35,4 +35,9 @@ public class ListNode {
         result = 31 * result + (next != null ? next.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString () {
+        return next == null ? String.valueOf(val) : val + "," + next;
+    }
 }

@@ -1,7 +1,5 @@
 package tech.chris.leetcode;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 // You are given two integer arrays nums1 and nums2,
 // sorted in non-decreasing order,and two integers m and n,representing the number of elements in nums1 and nums2 respectively.
 //
@@ -21,7 +19,34 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 // -10^9 <= nums1[i], nums2[j] <= 10^9
 public class MergeSortedArray {
     public void merge (int[] nums1, int m, int[] nums2, int n) {
-        // TODO:
-        throw new NotImplementedException();
+        int[] nums1_backup = new int[m];
+        System.arraycopy(nums1, 0, nums1_backup, 0, m);
+
+        int iM = 0;
+        int iN = 0;
+
+        int i = 0;
+        while (i < m + n) {
+            Integer valueM = iM < m ? nums1_backup[iM] : null;
+            Integer valueN = iN < n ? nums2[iN] : null;
+
+            if (valueM == null || valueN == null) {
+                if (valueM == null) {
+                    nums1[i] = valueN;
+                    iN++;
+                } else {
+                    nums1[i] = valueM;
+                    iM++;
+                }
+            } else if (valueM > valueN) {
+                nums1[i] = valueN;
+                iN++;
+            } else {
+                nums1[i] = valueM;
+                iM++;
+            }
+
+            i++;
+        }
     }
 }

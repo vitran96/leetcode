@@ -18,6 +18,7 @@ package tech.chris.leetcode;
 // 1 <= m + n <= 200
 // -10^9 <= nums1[i], nums2[j] <= 10^9
 public class MergeSortedArray {
+    // TODO: space optimization can be done by doing iteration from the end
     public void merge (int[] nums1, int m, int[] nums2, int n) {
         int[] nums1_backup = new int[m];
         System.arraycopy(nums1, 0, nums1_backup, 0, m);

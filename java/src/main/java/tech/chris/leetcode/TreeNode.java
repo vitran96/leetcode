@@ -7,7 +7,7 @@ public class TreeNode {
     public TreeNode left;
     public TreeNode right;
 
-    public TreeNode(int val) {
+    public TreeNode (int val) {
         this.val = val;
     }
 
@@ -27,13 +27,17 @@ public class TreeNode {
 
     @Override
     public boolean equals (Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
 
         TreeNode treeNode = (TreeNode) o;
 
-        if (val != treeNode.val) return false;
-        if (!Objects.equals(left, treeNode.left)) return false;
+        if (val != treeNode.val)
+            return false;
+        if (!Objects.equals(left, treeNode.left))
+            return false;
         return Objects.equals(right, treeNode.right);
     }
 

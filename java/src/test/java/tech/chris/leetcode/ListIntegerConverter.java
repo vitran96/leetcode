@@ -10,12 +10,12 @@ public final class ListIntegerConverter extends SimpleArgumentConverter {
     @Override
     protected Object convert (Object source, Class<?> targetType) throws ArgumentConversionException {
         if (source instanceof String && List.class.isAssignableFrom(targetType)) {
+            List<Integer> list = new LinkedList<>();
             if (((String) source).length() == 0) {
-                return null;
+                return list;
             }
 
             String[] strs = ((String) source).split(",");
-            List<Integer> list = new LinkedList<>();
             for (String str : strs) {
                 list.add(Integer.parseInt(str));
             }

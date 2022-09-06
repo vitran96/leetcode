@@ -11,7 +11,8 @@ public final class TreeNodeConverter extends SimpleArgumentConverter {
 
         TreeNode currentRoot = new TreeNode(Integer.parseInt(values[index]));
         currentRoot.left = convert(values, index + ((int) Math.pow(2, level)), level + 1);
-        currentRoot.right = convert(values, 1 + index + ((int) Math.pow(2, level)), level + 1);
+        currentRoot.right = convert(values, 1 + index + ((int) Math.pow(2, level)),
+                                    currentRoot.left == null ? level : level + 1);
 
         return currentRoot;
     }

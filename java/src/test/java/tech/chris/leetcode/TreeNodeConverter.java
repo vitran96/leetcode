@@ -10,9 +10,9 @@ public final class TreeNodeConverter extends SimpleArgumentConverter {
         }
 
         TreeNode currentRoot = new TreeNode(Integer.parseInt(values[index]));
-        currentRoot.left = convert(values, index + ((int) Math.pow(2, level)), level + 1);
-        currentRoot.right = convert(values, 1 + index + ((int) Math.pow(2, level)),
-                                    currentRoot.left == null ? level : level + 1);
+        int nextLeftIndex = index + ((int) Math.pow(2, level));
+        currentRoot.left = convert(values, nextLeftIndex, level + 1);
+        currentRoot.right = convert(values, 1 + nextLeftIndex, currentRoot.left == null ? level : level + 1);
 
         return currentRoot;
     }
@@ -25,7 +25,6 @@ public final class TreeNodeConverter extends SimpleArgumentConverter {
             }
 
             String[] strs = ((String) source).split(",");
-            // TODO: rewrite this converter
             return convert(strs, 0, 0);
         } else {
             throw new IllegalArgumentException(

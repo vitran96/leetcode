@@ -19,6 +19,10 @@ public class TreeNode {
 
     @Override
     public String toString () {
+        if (left == null && right == null) {
+            return String.valueOf(val);
+        }
+
         String leftV = left == null ? "null" : left.toString();
         String rightV = right == null ? "null" : right.toString();
 

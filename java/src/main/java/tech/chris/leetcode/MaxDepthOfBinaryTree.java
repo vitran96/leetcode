@@ -5,6 +5,7 @@ package tech.chris.leetcode;
 // The number of nodes in the tree is in the range [0, 10^4].
 // -100 <= Node.val <= 100
 public class MaxDepthOfBinaryTree {
+    // TODO: optimize space usage with tail recursion
     public int maxDepth (TreeNode root) {
         if (root == null) {
             return 0;

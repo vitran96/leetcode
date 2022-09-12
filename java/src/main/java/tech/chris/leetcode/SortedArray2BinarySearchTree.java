@@ -24,15 +24,6 @@ public class SortedArray2BinarySearchTree {
     }
 
     public TreeNode sortedArrayToBST (int[] nums) {
-        final int l = 0;
-        final int r = nums.length - 1;
-
-        final int middle = (l + r) / 2;
-
-        final TreeNode root = new TreeNode(nums[middle]);
-        root.left = sortedArrayToBST(nums, l, middle - 1);
-        root.right = sortedArrayToBST(nums, middle + 1, r);
-
-        return root;
+        return sortedArrayToBST(nums, 0, nums.length - 1);
     }
 }

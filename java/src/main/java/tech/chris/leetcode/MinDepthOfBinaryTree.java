@@ -8,6 +8,8 @@ package tech.chris.leetcode;
 // The number of nodes in the tree is in the range [0, 105].
 // -1000 <= Node.val <= 1000
 public class MinDepthOfBinaryTree {
+
+    // TODO: need optimization
     public int minDepth (TreeNode root) {
         if (root == null) {
             return 0;

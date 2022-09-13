@@ -8,16 +8,21 @@ package tech.chris.leetcode;
 // -1000 <= Node.val <= 1000
 // -1000 <= targetSum <= 1000
 public class PathSum {
-    public boolean hasPathSum (TreeNode root, int targetSum) {
+    private static boolean hasPathSum (final TreeNode root, final int targetSum, int currentSum) {
         if (root == null) {
             return false;
         }
 
-        targetSum -= root.val;
-        if (targetSum == 0) {
-            return root.left == null && root.right == null;
+        currentSum += root.val;
+        if (root.left == null && root.right == null) {
+            return currentSum == targetSum;
         }
 
-        return hasPathSum(root.left, targetSum) || hasPathSum(root.right, targetSum);
+        return hasPathSum(root.left, targetSum, currentSum) || hasPathSum(root.right, targetSum, currentSum);
+    }
+
+    // TODO: space usage can be decrease by using only 1 function
+    public boolean hasPathSum (TreeNode root, int targetSum) {
+        return hasPathSum(root, targetSum, 0);
     }
 }

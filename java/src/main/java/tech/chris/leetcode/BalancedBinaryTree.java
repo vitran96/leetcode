@@ -10,14 +10,14 @@ import javafx.util.Pair;
 // The number of nodes in the tree is in the range [0,5000].
 // -104 <= Node.val <= 104
 public class BalancedBinaryTree {
-    private static Pair<Integer, Boolean> isBalanced (final TreeNode node, final int height) {
+    private static Pair<Integer, Boolean> isBalanced (final TreeNode node, int height) {
         if (node == null) {
             return new Pair<>(height, true);
         }
 
-        final int newHeight = height + 1;
-        Pair<Integer, Boolean> leftResult = isBalanced(node.left, newHeight);
-        Pair<Integer, Boolean> rightResult = isBalanced(node.right, newHeight);
+        height++;
+        final Pair<Integer, Boolean> leftResult = isBalanced(node.left, height);
+        final Pair<Integer, Boolean> rightResult = isBalanced(node.right, height);
 
         if (!leftResult.getValue() || !rightResult.getValue()) {
             return new Pair<>(-1, false);

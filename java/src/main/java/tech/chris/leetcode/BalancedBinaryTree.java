@@ -10,6 +10,8 @@ import javafx.util.Pair;
 // The number of nodes in the tree is in the range [0,5000].
 // -104 <= Node.val <= 104
 public class BalancedBinaryTree {
+
+    // TODO: space optimization can be done by not using pair
     private static Pair<Integer, Boolean> isBalanced (final TreeNode node, int height) {
         if (node == null) {
             return new Pair<>(height, true);

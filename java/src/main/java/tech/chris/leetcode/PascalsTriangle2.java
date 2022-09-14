@@ -9,6 +9,7 @@ import java.util.List;
 //
 // 1 <= numRows <= 30
 public class PascalsTriangle2 {
+    // TODO: optimization can be done with pure math + 1 loop (window sliding)
     public List<Integer> getRow (int rowIndex) {
         List<Integer> lastRow = null;
 

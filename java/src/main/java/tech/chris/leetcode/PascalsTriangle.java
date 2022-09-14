@@ -1,7 +1,6 @@
 package tech.chris.leetcode;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
+import java.util.LinkedList;
 import java.util.List;
 
 // Given an integer numRows, return the first numRows of Pascal's triangle.
@@ -11,7 +10,22 @@ import java.util.List;
 // 1 <= numRows <= 30
 public class PascalsTriangle {
     public List<List<Integer>> generate (int numRows) {
-        // TODO:
-        throw new NotImplementedException();
+        List<List<Integer>> result = new LinkedList<>();
+        List<Integer> lastRow = null;
+
+        for (int i = 0; i < numRows; i++) {
+            List<Integer> currentRow = new LinkedList<>();
+            for (int j = 0; j <= i; j++) {
+                if (j == 0 || j == i) {
+                    currentRow.add(1);
+                } else {
+                    currentRow.add(lastRow.get(j - 1) + lastRow.get(j));
+                }
+            }
+            result.add(currentRow);
+            lastRow = currentRow;
+        }
+
+        return result;
     }
 }

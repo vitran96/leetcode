@@ -8,7 +8,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 public class BestTime2BuyAndSellStockTest {
 
     @ParameterizedTest
-    @CsvSource({"'7,1,5,3,6,4',5", "'7,6,4,3,1',0"})
+    @CsvSource({"'7,1,5,3,6,4',5", "'7,6,4,3,1',0", "'2,4,1',2", "'2,4,1,5',4"})
     public void test (@ConvertWith(IntArrayConverter.class) int[] input, int expected) {
         Assertions.assertEquals(expected, new BestTime2BuyAndSellStock().maxProfit(input));
     }

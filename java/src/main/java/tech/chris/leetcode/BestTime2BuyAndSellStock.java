@@ -9,6 +9,7 @@ package tech.chris.leetcode;
 // 1 <= prices.length <= 10^5
 // 0 <= prices[i] <= 10^4
 public class BestTime2BuyAndSellStock {
+    // TODO: need optimization
     public int maxProfit (int[] prices) {
         int profit = 0;
 

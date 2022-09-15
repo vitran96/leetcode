@@ -10,19 +10,18 @@ package tech.chris.leetcode;
 // 0 <= prices[i] <= 10^4
 public class BestTime2BuyAndSellStock {
     public int maxProfit (int[] prices) {
-        int iBuy = 0;
-        int iSell = 0;
-//        int profit = 0;
+        int profit = 0;
 
-        for (int i = 1; i < prices.length; i++) {
-            if (prices[i] < prices[iBuy]) {
-                iBuy = i;
-                iSell = i;
-            } else if (prices[i] > prices[iSell]) {
-                iSell = i;
+        for (int i = 0; i < prices.length; i++) {
+            final int iPrice = prices[i];
+            for (int j = i + 1; j < prices.length; j++) {
+                final int currentProfit = prices[j] - iPrice;
+                if (currentProfit > profit) {
+                    profit = currentProfit;
+                }
             }
         }
 
-        return iBuy >= iSell ? 0 : prices[iSell] - prices[iBuy];
+        return profit;
     }
 }

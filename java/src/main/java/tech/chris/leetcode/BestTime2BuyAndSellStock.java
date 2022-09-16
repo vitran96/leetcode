@@ -11,16 +11,20 @@ package tech.chris.leetcode;
 public class BestTime2BuyAndSellStock {
     // TODO: need optimization
     public int maxProfit (int[] prices) {
+        int iBuy = 0;
+        int iPotentialBuy = -1;
+
         int profit = 0;
 
         for (int i = 0; i < prices.length; i++) {
-            final int iPrice = prices[i];
-            for (int j = i + 1; j < prices.length; j++) {
-                final int currentProfit = prices[j] - iPrice;
-                if (currentProfit > profit) {
-                    profit = currentProfit;
-                }
+            if (iPotentialBuy != -1 && prices[i] > prices[iPotentialBuy]) {
+                iBuy = iPotentialBuy;
+                iPotentialBuy = -1;
+            } else if (prices[i] < prices[iBuy]) {
+                iPotentialBuy = i;
             }
+
+            profit = Math.max(prices[i] - prices[iBuy], profit);
         }
 
         return profit;

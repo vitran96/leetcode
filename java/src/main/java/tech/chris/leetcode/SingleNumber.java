@@ -10,6 +10,7 @@ import java.util.Set;
 // -3 * 10^4 <= nums[i] <= 3 * 10^4
 // Each element in the array appears twice except for one element which appears only once.
 public class SingleNumber {
+    // TODO: need optimize
     public int singleNumber (int[] nums) {
         Set<Integer> set = new HashSet<>();
         for (int n : nums) {

@@ -6,6 +6,7 @@ package tech.chris.leetcode;
 // 1 <= s.length <= 2*10^5
 // s consists only of printable ASCII characters.
 public class ValidPalindrome {
+    // TODO: can be faster without RegEx or even "toLowerCase"
     public boolean isPalindrome (String s) {
         String filteredString = s.toLowerCase().replaceAll("[^a-z0-9]", "");
 

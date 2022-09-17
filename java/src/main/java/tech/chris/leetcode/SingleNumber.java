@@ -1,6 +1,7 @@
 package tech.chris.leetcode;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+import java.util.HashSet;
+import java.util.Set;
 
 // Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
 //
@@ -10,7 +11,14 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 // Each element in the array appears twice except for one element which appears only once.
 public class SingleNumber {
     public int singleNumber (int[] nums) {
-        // TODO:
-        throw new NotImplementedException();
+        Set<Integer> set = new HashSet<>();
+        for (int n : nums) {
+            boolean added = set.add(n);
+            if (!added) {
+                set.remove(n);
+            }
+        }
+
+        return set.stream().findFirst().get();
     }
 }

@@ -3,13 +3,22 @@ package tech.chris.leetcode;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.converter.ConvertWith;
-import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.stream.Stream;
 
 public class LinkedListCycleTest {
 
+    private static Stream<Arguments> provideArgument () {
+        return Stream.of(Arguments.of(ListNodeConverter.convert("3,2,0,-4", 1), true),
+                         Arguments.of(ListNodeConverter.convert("1,2", 0), true),
+                         Arguments.of(ListNodeConverter.convert("1", -1), false));
+    }
+
     @ParameterizedTest
-    @CsvSource({"'',", "'',"})
-    public void test (@ConvertWith(ListNodeConverter.class) ListNode head, boolean expected) {
+    @MethodSource("provideArgument")
+    public void test (@ConvertWith(ListNodeConverter.class) ListNode head, int pos, boolean expected) {
         Assertions.assertEquals(expected, new LinkedListCycle().hasCycle(head));
     }
 }

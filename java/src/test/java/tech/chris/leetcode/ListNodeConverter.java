@@ -5,8 +5,8 @@ import org.junit.jupiter.params.converter.SimpleArgumentConverter;
 
 public final class ListNodeConverter extends SimpleArgumentConverter {
 
-    public static ListNode convert (final String source, final int loopPos) {
-        return (ListNode) new ListNodeConverter().convert(source, ListNode.class, loopPos);
+    public static Object convert (final String source, final int loopPos) {
+        return new ListNodeConverter().convert(source, ListNode.class, loopPos);
     }
 
     @Override

@@ -2,7 +2,6 @@ package tech.chris.leetcode;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.converter.ConvertWith;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -10,7 +9,7 @@ import java.util.stream.Stream;
 
 public class LinkedListCycleTest {
 
-    private static Stream<Arguments> provideArgument () {
+    static Stream<Arguments> provideArgument () {
         return Stream.of(Arguments.of(ListNodeConverter.convert("3,2,0,-4", 1), true),
                          Arguments.of(ListNodeConverter.convert("1,2", 0), true),
                          Arguments.of(ListNodeConverter.convert("1", -1), false));
@@ -18,7 +17,9 @@ public class LinkedListCycleTest {
 
     @ParameterizedTest
     @MethodSource("provideArgument")
-    public void test (@ConvertWith(ListNodeConverter.class) ListNode head, int pos, boolean expected) {
+    public void test (ListNode head, boolean expected) {
+//        ListNode head = ((ListNode) args.get()[0]);
+//        boolean expected = ((boolean) args.get()[1]);
         Assertions.assertEquals(expected, new LinkedListCycle().hasCycle(head));
     }
 }

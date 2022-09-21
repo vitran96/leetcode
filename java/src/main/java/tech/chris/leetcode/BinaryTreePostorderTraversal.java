@@ -13,8 +13,8 @@ public class BinaryTreePostorderTraversal {
             return;
         }
 
-        postorderTraversal(node.right, result);
         postorderTraversal(node.left, result);
+        postorderTraversal(node.right, result);
         result.add(node.val);
     }
 

@@ -1,7 +1,5 @@
 package tech.chris.leetcode;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 // Given the heads of two singly linked-lists headA and headB, return the node at which the two lists intersect. If
 // the two linked lists have no intersection at all, return null.
 // For example, the following two linked lists begin to intersect at node c1:
@@ -36,7 +34,18 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 // Follow up: Could you write a solution that runs in O(m + n) time and use only O(1) memory?
 public class IntersectionOf2LinkedLists {
     public ListNode getIntersectionNode (ListNode headA, ListNode headB) {
-        // TODO:
-        throw new NotImplementedException();
+        ListNode a = headA;
+        while (a != null) {
+            ListNode b = headB;
+            while (b != null) {
+                if (a == b) {
+                    return a;
+                }
+                b = b.next;
+            }
+            a = a.next;
+        }
+
+        return null;
     }
 }

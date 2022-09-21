@@ -1,5 +1,8 @@
 package tech.chris.leetcode;
 
+import java.util.HashMap;
+import java.util.Map;
+
 // Given the heads of two singly linked-lists headA and headB, return the node at which the two lists intersect. If
 // the two linked lists have no intersection at all, return null.
 // For example, the following two linked lists begin to intersect at node c1:
@@ -34,16 +37,20 @@ package tech.chris.leetcode;
 // Follow up: Could you write a solution that runs in O(m + n) time and use only O(1) memory?
 public class IntersectionOf2LinkedLists {
     public ListNode getIntersectionNode (ListNode headA, ListNode headB) {
-        ListNode a = headA;
-        while (a != null) {
-            ListNode b = headB;
-            while (b != null) {
-                if (a == b) {
-                    return a;
-                }
-                b = b.next;
+        Map<ListNode, ListNode> map = new HashMap<>();
+        ListNode temp = headA;
+        while (temp != null) {
+            map.put(temp, temp);
+            temp = temp.next;
+        }
+
+        temp = headB;
+        while (temp != null) {
+            ListNode intersectedNode = map.get(temp);
+            if (intersectedNode != null && intersectedNode == temp) {
+                return intersectedNode;
             }
-            a = a.next;
+            temp = temp.next;
         }
 
         return null;

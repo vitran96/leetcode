@@ -9,10 +9,10 @@ import java.util.stream.Stream;
 
 public class SumOfEvenNumsAfterQueriesTest {
     static Stream<Arguments> provideArgument () {
-        return Stream.of(Arguments.of(new int[]{1, 2, 3, 4},
+        return Stream.of(Arguments.of(new int[]{1}, new int[][]{new int[]{4, 0}}, new int[]{0}),
+                         Arguments.of(new int[]{1, 2, 3, 4},
                                       new int[][]{new int[]{1, 0}, new int[]{-3, 1}, new int[]{-4, 0}, new int[]{2, 3}},
-                                      new int[]{8, 6, 2, 4}),
-                         Arguments.of(new int[]{1}, new int[][]{new int[]{4, 0}}, new int[]{0}));
+                                      new int[]{8, 6, 2, 4}));
     }
 
     @ParameterizedTest

@@ -18,8 +18,6 @@ public class LinkedListCycleTest {
     @ParameterizedTest
     @MethodSource("provideArgument")
     public void test (ListNode head, boolean expected) {
-//        ListNode head = ((ListNode) args.get()[0]);
-//        boolean expected = ((boolean) args.get()[1]);
         Assertions.assertEquals(expected, new LinkedListCycle().hasCycle(head));
     }
 }

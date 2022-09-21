@@ -18,6 +18,6 @@ public class SumOfEvenNumsAfterQueriesTest {
     @ParameterizedTest
     @MethodSource("provideArgument")
     public void test (int[] nums, int[][] queries, int[] expected) {
-        Assertions.assertEquals(new SumOfEvenNumsAfterQueries().sumEvenAfterQueries(nums, queries), expected);
+        Assertions.assertArrayEquals(expected, new SumOfEvenNumsAfterQueries().sumEvenAfterQueries(nums, queries));
     }
 }

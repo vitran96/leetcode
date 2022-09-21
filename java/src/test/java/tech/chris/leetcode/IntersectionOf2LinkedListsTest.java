@@ -19,6 +19,6 @@ public class IntersectionOf2LinkedListsTest {
     @ParameterizedTest
     @MethodSource("provideArgument")
     public void test (ListNode headA, ListNode headB, ListNode expected) {
-        Assertions.assertEquals(new IntersectionOf2LinkedLists().getIntersectionNode(headA, headB), expected);
+        Assertions.assertEquals(expected, new IntersectionOf2LinkedLists().getIntersectionNode(headA, headB));
     }
 }

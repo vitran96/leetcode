@@ -1,7 +1,5 @@
 package tech.chris.leetcode;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 // Given a string s, reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.
 //
 // 1 <= s.length <= 5*10^4
@@ -11,7 +9,16 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 // All the words in s are separated by a single space.
 public class ReverseWordsInAString3 {
     public String reverseWords (String s) {
-        // TODO:
-        throw new NotImplementedException();
+        String[] strings = s.split(" ");
+
+        StringBuilder stringBuilder = new StringBuilder();
+        for (String str : strings) {
+            for (int i = str.length() - 1; i >= 0; i--) {
+                stringBuilder.append(str.charAt(i));
+            }
+            stringBuilder.append(" ");
+        }
+
+        return stringBuilder.toString().trim();
     }
 }

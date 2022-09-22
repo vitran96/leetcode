@@ -9,16 +9,21 @@ package tech.chris.leetcode;
 // All the words in s are separated by a single space.
 public class ReverseWordsInAString3 {
     public String reverseWords (String s) {
-        String[] strings = s.split(" ");
-
-        StringBuilder stringBuilder = new StringBuilder();
-        for (String str : strings) {
-            for (int i = str.length() - 1; i >= 0; i--) {
-                stringBuilder.append(str.charAt(i));
+        StringBuilder wordBuffer = new StringBuilder();
+        StringBuilder stringBuffer = new StringBuilder();
+        for (int i = s.length() - 1; i >= 0; i--) {
+            char c = s.charAt(i);
+            if (c == ' ') {
+                wordBuffer.insert(0, c);
+                stringBuffer.insert(0, wordBuffer);
+                wordBuffer.setLength(0);
+            } else {
+                wordBuffer.append(c);
             }
-            stringBuilder.append(" ");
         }
 
-        return stringBuilder.toString().trim();
+        stringBuffer.insert(0, wordBuffer);
+
+        return stringBuffer.toString();
     }
 }

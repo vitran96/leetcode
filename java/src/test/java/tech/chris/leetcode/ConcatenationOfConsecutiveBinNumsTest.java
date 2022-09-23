@@ -7,7 +7,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 public class ConcatenationOfConsecutiveBinNumsTest {
 
     @ParameterizedTest
-    @CsvSource({"1,1", "3,27", "12,505379714"})
+    @CsvSource({"1,1", "3,27", "12,505379714", "42,727837408"})
     public void test (int input1, int expected) {
         Assertions.assertEquals(expected, new ConcatenationOfConsecutiveBinNums().concatenatedBinary(input1));
     }

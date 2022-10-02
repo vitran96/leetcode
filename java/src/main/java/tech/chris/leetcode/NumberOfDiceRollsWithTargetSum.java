@@ -15,6 +15,6 @@ public class NumberOfDiceRollsWithTargetSum {
 
     public int numRollsToTarget (int n, int k, int target) {
         // TODO:
-        throw new UnsupportedOperationException();
+        return 0;
     }
 }

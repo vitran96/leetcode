@@ -8,7 +8,7 @@ public class ExcelSheetColumnTitle {
     public String convertToTitle (int columnNumber) {
         // columnNumber must be shifted by 1
         // Why?
-        // Image A index is 0 and Z is 25
+        // Imagining A index is 0 and Z is 25
         // If not deduce by 1, we can get weird number after a mod
         // EG: 27 (A) % 26 => 1 (B) -> 1 % 26 => 1 (B) ==> BB -> WRONG
         // 27 - 1 % 26 => 0 (A) -> 1 - 1 % 26 => 0 (A) ==> AA -> CORRECT

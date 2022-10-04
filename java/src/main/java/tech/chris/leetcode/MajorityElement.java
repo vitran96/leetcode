@@ -17,7 +17,7 @@ public class MajorityElement {
         int result = -1;
         for (int n : nums) {
             Integer currentCounter = map.get(n);
-            map.put(n, currentCounter != null ? currentCounter++ : 1);
+            map.put(n, currentCounter != null ? currentCounter + 1 : 1);
 
             currentCounter = map.get(n);
             if (currentCounter > highestCounter) {

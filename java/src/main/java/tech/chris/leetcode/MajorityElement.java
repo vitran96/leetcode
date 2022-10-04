@@ -7,6 +7,8 @@ package tech.chris.leetcode;
 // n == nums.length
 // 1 <= n <= 5*10^4
 // -10^9 <= nums[i] <= 10^9
+//
+// TODO: let's make this an interface then apply and understand all kind of solution
 public class MajorityElement {
     public int majorityElement (int[] nums) {
         int counter = 0;

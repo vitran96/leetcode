@@ -1,4 +1,4 @@
-package tech.chris.leetcode;
+package tech.chris.leetcode.excelSheetColumnNumber;
 
 /**
  * Given a string columnTitle that represents the column title as appears in an Excel sheet,
@@ -8,15 +8,15 @@ package tech.chris.leetcode;
  * columnTitle consists only of uppercase English letters.
  * columnTitle is in the range ["A", "FXSHRXW"].
  */
-public class ExcelSheetColumnNumber {
+public class OptimizedSolution implements ExcelSheetColumnNumber {
+    @Override
     public int titleToNumber (String columnTitle) {
-        int powerOf = 0;
-        long result = 0;
-        for (int i = columnTitle.length() - 1; i >= 0; i--) {
-            result += Math.pow(26, powerOf) * (columnTitle.charAt(i) - 'A' + 1);
-            powerOf++;
+        int result = 0;
+        for (int i = 0; i < columnTitle.length(); i++) {
+            result *= 26;
+            result += (columnTitle.charAt(i) - 'A' + 1);
         }
 
-        return ((int) result);
+        return result;
     }
 }

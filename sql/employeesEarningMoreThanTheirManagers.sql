@@ -21,6 +21,9 @@ SELECT
     E.name AS 'Employee'
 FROM Employee AS E
 INNER JOIN Employee as M
-ON E.managerId = M.id AND E.salary > M.salary
+ON E.managerId = M.id AND E.salary > M.salary;
 
 -- Fastest implementation from online
+SELECT e1.Name as 'Employee'
+FROM Employee as e1, Employee as e2
+WHERE e1.managerId = e2.id AND e1.salary > e2.salary;

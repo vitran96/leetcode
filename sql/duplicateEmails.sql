@@ -10,6 +10,7 @@
 --
 -- Write an SQL query to report all the duplicate emails.
 -- Return the result table in any order.
-SELECT FilteredPerson.email AS Email
-FROM (SELECT DISTINCT email, COUNT(email) AS counter FROM Person) AS FilteredPerson
-WHERE FilteredPerson.counter > 1;
+SELECT email AS Email
+FROM Person
+GROUP BY email
+HAVING COUNT(email) > 1;

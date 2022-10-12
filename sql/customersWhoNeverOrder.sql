@@ -25,8 +25,14 @@
 -- Return the result table in any order.
 -- The query result format is in the following example.
 
+-- My solution
 SELECT Customers.name as 'Customers'
 FROM Customers
 LEFT JOIN Orders
 ON Customers.id = Orders.customerId
 WHERE Orders.id IS NULL;
+
+-- Online solution
+SELECT name AS Customers
+FROM Customers
+WHERE id NOT IN (SELECT customerId FROM Orders);

@@ -1,5 +1,6 @@
 package tech.chris.leetcode.numberOf1Bits;
 
+// TODO: this can be optimized with bit operation
 public class MySolution implements NumberOf1Bits {
     @Override
     public int hammingWeight (int n) {

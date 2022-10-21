@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 public class NumberOf1BitsTest {
     static Stream<Arguments> provideArgument () {
         return Stream.of(Arguments.of(Integer.parseUnsignedInt("00000000000000000000000000001011", 2), 3),
-                         Arguments.of(Integer.parseUnsignedInt("00000000000000000000000010000000"), 1),
+                         Arguments.of(Integer.parseUnsignedInt("00000000000000000000000010000000", 2), 1),
                          Arguments.of(Integer.parseUnsignedInt("11111111111111111111111111111101", 2), 31));
     }
 

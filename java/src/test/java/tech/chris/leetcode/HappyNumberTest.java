@@ -11,7 +11,7 @@ import java.util.stream.Stream;
 public class HappyNumberTest {
 
     static Stream<Arguments> provideArgument () {
-        return Stream.of(Arguments.of(19, true), Arguments.of(2, false));
+        return Stream.of(Arguments.of(19, true), Arguments.of(2, false), Arguments.of(7, true));
     }
 
     @ParameterizedTest

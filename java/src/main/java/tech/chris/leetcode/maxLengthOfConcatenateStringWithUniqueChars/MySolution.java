@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+// TODO: can be optimized
 public class MySolution implements MaxLengthOfConcatenateStringWithUniqueChars {
     private static boolean isUnique (String str) {
         boolean result = true;

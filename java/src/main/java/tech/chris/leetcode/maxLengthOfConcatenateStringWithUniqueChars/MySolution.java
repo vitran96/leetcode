@@ -3,6 +3,7 @@ package tech.chris.leetcode.maxLengthOfConcatenateStringWithUniqueChars;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class MySolution implements MaxLengthOfConcatenateStringWithUniqueChars {
     private static boolean isUnique (String str) {
@@ -21,29 +22,25 @@ public class MySolution implements MaxLengthOfConcatenateStringWithUniqueChars {
         return result;
     }
 
+    private static void parseUniqueString (List<String> arr, List<String> uniqueStr, int i, String str) {
+        for (int j = i + 1; j < arr.size(); j++) {
+            String nextStr = str + arr.get(j);
+            if (isUnique(nextStr)) {
+                uniqueStr.add(nextStr);
+            }
+
+            parseUniqueString(arr, uniqueStr, j, nextStr);
+        }
+    }
+
     @Override
     public int maxLength (List<String> arr) {
-        List<String> uniqueString = new LinkedList<>();
+        arr = arr.stream().filter(MySolution::isUnique).collect(Collectors.toList());
+        List<String> uniqueString = new LinkedList<>(arr);
         for (int i = 0; i < arr.size(); i++) {
             String str = arr.get(i);
-            if (!isUnique(str)) {
-                continue;
-            }
-
-            uniqueString.add(str);
-
-            for (int j = i + 1; j < arr.size(); j++) {
-                if (!isUnique(str)) {
-                    continue;
-                }
-
-                String newStr = str + arr.get(j);
-                if (isUnique(newStr)) {
-                    uniqueString.add(newStr);
-                }
-            }
+            parseUniqueString(arr, uniqueString, i, str);
         }
-
         return uniqueString.stream().max(Comparator.comparingInt(String::length)).orElse("").length();
     }
 }

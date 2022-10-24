@@ -28,7 +28,24 @@ public class MaxLengthOfConcatenateStringWithUniqueCharsTest {
         }}, 3), Arguments.of(new ArrayList<String>() {{
             add("ccha");
             add("cact");
-        }}, 0));
+        }}, 0), Arguments.of(new ArrayList<String>() {{
+            add("a");
+            add("b");
+            add("c");
+            add("d");
+            add("e");
+            add("f");
+            add("g");
+            add("h");
+            add("i");
+            add("j");
+            add("k");
+            add("l");
+            add("m");
+            add("n");
+            add("o");
+            add("p");
+        }}, 16));
     }
 
     @ParameterizedTest

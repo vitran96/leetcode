@@ -2,6 +2,7 @@ package tech.chris.leetcode.removeLinkedListElements;
 
 import tech.chris.leetcode.ListNode;
 
+// TODO: can be optimized
 public class MySolution implements RemoveLinkedListElements {
     @Override
     public ListNode removeElements (ListNode head, int val) {

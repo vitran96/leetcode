@@ -13,7 +13,10 @@ public class IsomorphicStringsTest {
     static Stream<Arguments> provideArgument () {
         return Stream.of(Arguments.of("egg", "add", true),
                          Arguments.of("foo", "bar", false),
-                         Arguments.of("paper", "title", true));
+                         Arguments.of("paper", "title", true),
+                         Arguments.of("aaeaa", "uuxyy", false),
+                         Arguments.of("13", "42", true),
+                         Arguments.of("badc", "baba", false));
     }
 
     @ParameterizedTest

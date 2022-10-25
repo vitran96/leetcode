@@ -3,6 +3,7 @@ package tech.chris.leetcode.isomorphicStrings;
 import java.util.HashMap;
 import java.util.Map;
 
+// TODO: can be optimized
 public class MySolution implements IsomorphicStrings {
     @Override
     public boolean isIsomorphic (String s, String t) {

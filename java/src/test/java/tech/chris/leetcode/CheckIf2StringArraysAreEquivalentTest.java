@@ -5,6 +5,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import tech.chris.leetcode.checkIf2StringArraysAreEquivalent.MySolution;
+import tech.chris.leetcode.checkIf2StringArraysAreEquivalent.NoStreamSolution;
 
 import java.util.stream.Stream;
 
@@ -20,7 +21,13 @@ public class CheckIf2StringArraysAreEquivalentTest {
 
     @ParameterizedTest
     @MethodSource("provideArgument")
-    public void test (String[] word1, String[] word2, boolean expected) {
+    public void test1 (String[] word1, String[] word2, boolean expected) {
         Assertions.assertEquals(expected, new MySolution().arrayStringsAreEqual(word1, word2));
+    }
+
+    @ParameterizedTest
+    @MethodSource("provideArgument")
+    public void test2 (String[] word1, String[] word2, boolean expected) {
+        Assertions.assertEquals(expected, new NoStreamSolution().arrayStringsAreEqual(word1, word2));
     }
 }

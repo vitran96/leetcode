@@ -1,54 +1,46 @@
 package tech.chris.leetcode.imageOverlap;
 
-import java.util.Arrays;
-
 public class MySolution implements ImageOverlap {
-    private static int[][] getBlockOf1 (int[][] img) {
-        int topIndex = img.length - 1;
-        int bottomIndex = -1;
-        int rightIndex = -1;
-        int leftIndex = img.length - 1;
-        for (int i = 0; i < img.length; i++) {
-            int[] row = img[i];
-            for (int j = 0; j < row.length; j++) {
-                int val = row[j];
-                if (val == 0) {
-                    continue;
-                }
+    private int[][] newImg (int[][] img) {
+        int newSize = img.length * 3 - 2;
+        int[][] newImg = new int[newSize][newSize];
+        int startIndex = img.length - 1;
+        int traversalLength = img.length * 2 - 1;
+        for (int i = startIndex; i < traversalLength; i++) {
+            int[] row = newImg[i];
+            System.arraycopy(img[i - startIndex], 0, row, startIndex, img.length);
+        }
+        return newImg;
+    }
 
-                if (i < topIndex) {
-                    topIndex = i;
-                } else if (i > bottomIndex) {
-                    bottomIndex = i;
-                }
-
-                if (j < leftIndex) {
-                    leftIndex = j;
-                } else if (j > rightIndex) {
-                    rightIndex = j;
+    private int count (int[][] img1, int[][] img2, int x, int y) {
+        int count = 0;
+        for (int i = 0; i < img2.length; i++) {
+            int[] img2Row = img2[i];
+            int[] img1Row = img1[y + i];
+            for (int j = 0; j < img2.length; j++) {
+                if (img2Row[j] == 1 && img2Row[j] == img1Row[x + j]) {
+                    count++;
                 }
             }
         }
 
-        int[][] result = new int[bottomIndex - topIndex + 1][rightIndex - leftIndex + 1];
-        for (int i = topIndex; i <= bottomIndex; i++) {
-            int[] row = img[i];
-            int[] resultRow = new int[result[0].length];
-            if (rightIndex + 1 - leftIndex >= 0)
-                System.arraycopy(row, leftIndex, resultRow, 0, rightIndex + 1 - leftIndex);
-            result[i - topIndex] = resultRow;
-        }
-
-        return result;
+        return count;
     }
 
     @Override
     public int largestOverlap (int[][] img1, int[][] img2) {
-        int[][] img1BlockOf1 = getBlockOf1(img1);
-        int[][] img2BlockOf1 = getBlockOf1(img2);
-
-        System.out.println(Arrays.deepToString(img1BlockOf1));
-        System.out.println(Arrays.deepToString(img2BlockOf1));
-        return 0;
+        img1 = newImg(img1);
+        int result = 0;
+        int traversalLength = img2.length * 2 - 1;
+        for (int y = 0; y < traversalLength; y++) {
+            for (int x = 0; x < traversalLength; x++) {
+                int count = count(img1, img2, x, y);
+                if (count > result) {
+                    result = count;
+                }
+            }
+        }
+        return result;
     }
 }

@@ -2,6 +2,7 @@ package tech.chris.leetcode.shortestPathInGridWithWallDestroy;
 
 import java.util.*;
 
+// TODO: can be optimized
 public class MySolution implements ShortestPathInGridWithWallDestroy {
     private static final List<Position> MOVE_SET = new ArrayList<Position>() {{
         add(new Position(0, 1));

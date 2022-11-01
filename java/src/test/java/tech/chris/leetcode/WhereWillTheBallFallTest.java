@@ -5,7 +5,9 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import tech.chris.leetcode.whereWillTheBallFall.MySolution;
+import tech.chris.leetcode.whereWillTheBallFall.Solution2;
 
+import java.util.Arrays;
 import java.util.stream.Stream;
 
 public class WhereWillTheBallFallTest {
@@ -32,6 +34,14 @@ public class WhereWillTheBallFallTest {
     @ParameterizedTest
     @MethodSource("provideArgument")
     public void test1 (int[][] grid, int[] expected) {
-        Assertions.assertArrayEquals(expected, new MySolution().findBall(grid));
+        int[] ans = new MySolution().findBall(grid);
+        Assertions.assertArrayEquals(expected, ans, Arrays.toString(ans));
+    }
+
+    @ParameterizedTest
+    @MethodSource("provideArgument")
+    public void test2 (int[][] grid, int[] expected) {
+        int[] ans = new Solution2().findBall(grid);
+        Assertions.assertArrayEquals(expected, ans, Arrays.toString(ans));
     }
 }

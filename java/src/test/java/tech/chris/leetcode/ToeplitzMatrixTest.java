@@ -5,6 +5,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import tech.chris.leetcode.toeplitzMatrix.MySolution;
+import tech.chris.leetcode.toeplitzMatrix.MySolution2;
 
 import java.util.stream.Stream;
 
@@ -21,5 +22,11 @@ public class ToeplitzMatrixTest {
     @MethodSource("provideArgument")
     public void test1 (int[][] matrix, boolean expected) {
         Assertions.assertEquals(expected, new MySolution().isToeplitzMatrix(matrix));
+    }
+
+    @ParameterizedTest
+    @MethodSource("provideArgument")
+    public void test2 (int[][] matrix, boolean expected) {
+        Assertions.assertEquals(expected, new MySolution2().isToeplitzMatrix(matrix));
     }
 }

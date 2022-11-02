@@ -22,7 +22,10 @@ public class MinGeneticMutationTest {
                                       new String[]{"AAAACCCC", "AAACCCCC", "AACCCCCC"},
                                       3
                          ),
-                         Arguments.of("AACCGGTT", "CACCGGTA", new String[]{"CACCGGTA"}, -1)
+                         Arguments.of("AACCGGTT", "CACCGGTA", new String[]{"CACCGGTA"}, -1),
+                         Arguments.of("AACCGGTT", "AAACGGTA", new String[]{
+                             "AACCGATT", "AACCGATA", "AAACGATA", "AAACGGTA"
+                         }, 4)
         );
     }
 

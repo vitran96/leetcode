@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+// TODO: space optimization
 public class MySolution implements LongestPalindromeByConcatenating2LetterWords {
     @Override
     public int longestPalindrome (String[] words) {

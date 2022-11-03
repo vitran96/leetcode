@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
+// TODO: minor optimization can be done. Eg: saving List / Queue size before iterate
 public class MySolution implements MinGeneticMutation {
     char[] chars = new char[]{'A', 'C', 'G', 'T'};
 

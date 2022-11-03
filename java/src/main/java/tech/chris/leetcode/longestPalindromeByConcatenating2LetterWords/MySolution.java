@@ -1,7 +1,9 @@
 package tech.chris.leetcode.longestPalindromeByConcatenating2LetterWords;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class MySolution implements LongestPalindromeByConcatenating2LetterWords {
     @Override
@@ -12,12 +14,7 @@ public class MySolution implements LongestPalindromeByConcatenating2LetterWords 
             if (word.charAt(0) == word.charAt(1)) {
                 dubCounter.put(word, dubCounter.getOrDefault(word, 0) + 1);
             } else {
-                if (counter.containsKey(word)) {
-                    counter.put(word, counter.getOrDefault(word, 0) + 1);
-                } else {
-                    String reverse = new String(new char[]{word.charAt(1), word.charAt(0)});
-                    counter.put(reverse, counter.getOrDefault(reverse, 0) + 1);
-                }
+                counter.put(word, counter.getOrDefault(word, 0) + 1);
             }
         }
 
@@ -34,10 +31,22 @@ public class MySolution implements LongestPalindromeByConcatenating2LetterWords 
         }
 
         int multiple = 0;
+        Set<String> visited = new HashSet<>();
         for (Map.Entry<String, Integer> e : counter.entrySet()) {
-            if (e.getValue() > 1) {
-                multiple += 2 * (e.getValue() % 2 == 0 ? e.getValue() : e.getValue() - 1);
+            if (visited.contains(e.getKey())) {
+                continue;
             }
+
+            String reverse = e.getKey().charAt(1) + "" + e.getKey().charAt(0);
+            visited.add(e.getKey());
+            visited.add(reverse);
+
+            int reverseStringCounter = counter.getOrDefault(reverse, 0);
+            if (e.getValue() == 0 || reverseStringCounter == 0) {
+                continue;
+            }
+
+            multiple += 2 * 2 * Math.min(e.getValue(), reverseStringCounter);
         }
 
         return singleDub + multipleDub + multiple;

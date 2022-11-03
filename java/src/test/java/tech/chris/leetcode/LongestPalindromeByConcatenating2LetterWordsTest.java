@@ -18,7 +18,11 @@ public class LongestPalindromeByConcatenating2LetterWordsTest {
             Arguments.of(new String[]{"cc", "ll", "xx", "xx", "xx", "xx"}, 10),
             Arguments.of(new String[]{
                 "dd", "aa", "bb", "dd", "aa", "dd", "bb", "dd", "aa", "cc", "bb", "cc", "dd", "cc"
-            }, 10)
+            }, 22),
+            Arguments.of(
+                new String[]{"em", "pe", "mp", "ee", "pp", "me", "ep", "em", "em", "me"},
+                14
+            )
         );
     }
 

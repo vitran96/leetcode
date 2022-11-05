@@ -13,18 +13,28 @@ import java.util.stream.Stream;
 public class WordSearch2Test {
 
     static Stream<Arguments> provideArgument () {
-        return Stream.of(Arguments.of(new char[][]{
-            {'o', 'a', 'a', 'n'},
-            {'e', 't', 'a', 'e'},
-            {'i', 'h', 'k', 'r'},
-            {'i', 'f', 'l', 'v'}
-        }, new String[]{"oath", "pea", "eat", "rain"}, new ArrayList<String>() {{
-            add("eat");
-            add("oath");
-        }}), Arguments.of(new char[][]{{'a', 'b'}, {'c', 'd'}},
-                          new String[]{"abcb"},
-                          new ArrayList<String>()
-        ));
+        return Stream.of(
+            Arguments.of(new char[][]{
+                {'o', 'a', 'a', 'n'},
+                {'e', 't', 'a', 'e'},
+                {'i', 'h', 'k', 'r'},
+                {'i', 'f', 'l', 'v'}
+            }, new String[]{"oath", "pea", "eat", "rain"}, new ArrayList<String>() {{
+                add("eat");
+                add("oath");
+            }}),
+            Arguments.of(new char[][]{{'a', 'b'}, {'c', 'd'}},
+                         new String[]{"abcb"},
+                         new ArrayList<String>()
+            ),
+            Arguments.of(new char[][]{{'a'}},
+                         new String[]{"a", "a"},
+                         new ArrayList<String>() {{
+                             add("a");
+                             add("a");
+                         }}
+            )
+        );
     }
 
     @ParameterizedTest

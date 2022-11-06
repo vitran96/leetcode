@@ -11,7 +11,11 @@ import java.util.stream.Stream;
 public class OrderlyQueueTest {
 
     static Stream<Arguments> provideArgument () {
-        return Stream.of(Arguments.of("cba", 1, "acb"), Arguments.of("baaca", 3, "aaabc"));
+        return Stream.of(
+            Arguments.of("cba", 1, "acb"),
+            Arguments.of("baaca", 3, "aaabc"),
+            Arguments.of("kuh", 1, "hku")
+        );
     }
 
     @ParameterizedTest

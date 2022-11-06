@@ -2,6 +2,7 @@ package tech.chris.leetcode.orderlyQueue;
 
 import java.util.Arrays;
 
+// TODO: optimize using Booth's algorithm
 public class MySolution implements OrderlyQueue {
     @Override
     public String orderlyQueue (String s, int k) {

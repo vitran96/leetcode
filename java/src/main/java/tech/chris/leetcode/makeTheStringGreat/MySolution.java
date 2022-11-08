@@ -1,5 +1,7 @@
 package tech.chris.leetcode.makeTheStringGreat;
 
+// TODO: optimization 1 use STACK
+// TODO: optimization 2 use 2 pointer
 public class MySolution implements MakeTheStringGreat {
     @Override
     public String makeGood (String s) {

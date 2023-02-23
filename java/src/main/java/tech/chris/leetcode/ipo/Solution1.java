@@ -33,7 +33,7 @@ public class Solution1 implements Ipo {
                 break;
             }
 
-            w += projects.get(selected).profit;
+            w += projects.remove(selected).profit;
             k--;
         }
         return w;

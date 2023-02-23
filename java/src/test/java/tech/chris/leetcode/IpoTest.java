@@ -13,7 +13,8 @@ public class IpoTest {
     static Stream<Arguments> provideArgument() {
         return Stream.of(
             Arguments.of(2, 0, new int[]{1, 2, 3}, new int[]{0, 1, 1}, 4),
-            Arguments.of(3, 0, new int[]{1, 2, 3}, new int[]{0, 1, 2}, 6)
+            Arguments.of(3, 0, new int[]{1, 2, 3}, new int[]{0, 1, 2}, 6),
+            Arguments.of(10, 0, new int[]{1, 2, 3}, new int[]{0, 1, 2}, 6)
         );
     }
 

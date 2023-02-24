@@ -14,7 +14,8 @@ public class Int2RomanTest {
         return Stream.of(
             Arguments.of(3, "III"),
             Arguments.of(58, "LVIII"),
-            Arguments.of(1994, "MCMXCIV")
+            Arguments.of(1994, "MCMXCIV"),
+            Arguments.of(2994, "MMCMXCIV")
         );
     }
 

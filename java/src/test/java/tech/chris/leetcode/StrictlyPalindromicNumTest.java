@@ -13,7 +13,8 @@ public class StrictlyPalindromicNumTest {
     static Stream<Arguments> provideArgument() {
         return Stream.of(
             Arguments.of(9, false),
-            Arguments.of(4, false)
+            Arguments.of(4, false),
+            Arguments.of(20, false)
         );
     }
 

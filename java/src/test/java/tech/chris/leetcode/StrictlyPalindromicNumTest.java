@@ -8,7 +8,7 @@ import tech.chris.leetcode.strictlyPalindromicNum.Solution1;
 
 import java.util.stream.Stream;
 
-public class StrictlyPalindromeicNumTest {
+public class StrictlyPalindromicNumTest {
 
     static Stream<Arguments> provideArgument() {
         return Stream.of(

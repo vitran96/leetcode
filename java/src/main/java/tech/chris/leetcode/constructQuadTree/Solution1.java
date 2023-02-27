@@ -51,9 +51,11 @@ public class Solution1 implements ConstructQuadTree {
             current.isLeaf = false;
             current.val = true;
 
-            current.topRight = construct(grid, x, rowStart, colEnd, y - 1);
-            current.bottomLeft = construct(grid, colStart, y, x - 1, rowEnd);
-            current.bottomRight = construct(grid, x, y, colEnd, rowEnd);
+            int midCol = (colStart + colEnd) / 2;
+            int midRow = (rowStart + rowEnd) / 2;
+            current.topRight = construct(grid, midCol + 1, rowStart, colEnd, midRow);
+            current.bottomLeft = construct(grid, colStart, midRow + 1, midCol, rowEnd);
+            current.bottomRight = construct(grid, midCol + 1, midRow + 1, colEnd, rowEnd);
         }
         return current;
     }

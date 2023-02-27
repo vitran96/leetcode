@@ -47,12 +47,12 @@ public class Solution1 implements ConstructQuadTree {
         }
 
         if (hasDiff) {
-            current.topLeft = new Node(current.val, current.isLeaf);
             current.isLeaf = false;
             current.val = true;
 
             int midCol = (colStart + colEnd) / 2;
             int midRow = (rowStart + rowEnd) / 2;
+            current.topLeft = construct(grid, colStart, rowStart, midCol, midRow);
             current.topRight = construct(grid, midCol + 1, rowStart, colEnd, midRow);
             current.bottomLeft = construct(grid, colStart, midRow + 1, midCol, rowEnd);
             current.bottomRight = construct(grid, midCol + 1, midRow + 1, colEnd, rowEnd);

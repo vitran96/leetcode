@@ -29,7 +29,12 @@ public class Node {
         this.bottomRight = null;
     }
 
-    public Node(boolean val, boolean isLeaf, Node topLeft, Node topRight, Node bottomLeft, Node bottomRight) {
+    public Node(boolean val,
+                boolean isLeaf,
+                Node topLeft,
+                Node topRight,
+                Node bottomLeft,
+                Node bottomRight) {
         this.val = val;
         this.isLeaf = isLeaf;
         this.topLeft = topLeft;

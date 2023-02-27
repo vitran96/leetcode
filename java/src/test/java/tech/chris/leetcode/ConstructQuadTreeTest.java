@@ -41,7 +41,9 @@ public class ConstructQuadTreeTest {
                              {1, 1, 1, 1, 0, 0, 0, 0},
                              {1, 1, 1, 1, 0, 0, 0, 0},
                              {1, 1, 1, 1, 0, 0, 0, 0}},
-                         expected2)
+                         expected2),
+            Arguments.of(new int[][]{{1}}, new Node(true, true)),
+            Arguments.of(new int[][]{{0}}, new Node(false, true))
         );
     }
 

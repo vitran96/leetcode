@@ -30,6 +30,14 @@ public class ConstructQuadTreeTest {
                                            new Node(true, true)),
                                   new Node(true, true),
                                   new Node(false, true));
+
+        Node expected5 = new Node(true,
+                                  false,
+                                  new Node(false, true),
+                                  new Node(false, true),
+                                  new Node(false, true),
+                                  new Node(true, true));
+
         return Stream.of(
             Arguments.of(new int[][]{{0, 1}, {1, 0}}, expected1),
             Arguments.of(new int[][]{
@@ -43,7 +51,8 @@ public class ConstructQuadTreeTest {
                              {1, 1, 1, 1, 0, 0, 0, 0}},
                          expected2),
             Arguments.of(new int[][]{{1}}, new Node(true, true)),
-            Arguments.of(new int[][]{{0}}, new Node(false, true))
+            Arguments.of(new int[][]{{0}}, new Node(false, true)),
+            Arguments.of(new int[][]{{0, 0}, {0, 1}}, expected5)
         );
     }
 

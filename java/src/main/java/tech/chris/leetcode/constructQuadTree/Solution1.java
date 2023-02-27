@@ -19,9 +19,9 @@ public class Solution1 implements ConstructQuadTree {
         int x = colStart + 1;
         int y = rowStart + 1;
         boolean hasDiff = false;
-        while (x <= colEnd || y <= rowEnd) {
+        while (x <= colEnd && y <= rowEnd) {
             for (int i = rowStart; i <= y; i++) {
-                if ((grid[i][colStart] == 1) != current.val) {
+                if ((grid[i][x] == 1) != current.val) {
                     hasDiff = true;
                     break;
                 }
@@ -32,7 +32,7 @@ public class Solution1 implements ConstructQuadTree {
             }
 
             for (int i = colStart; i <= x; i++) {
-                if ((grid[rowStart][i] == 1) != current.val) {
+                if ((grid[y][i] == 1) != current.val) {
                     hasDiff = true;
                     break;
                 }

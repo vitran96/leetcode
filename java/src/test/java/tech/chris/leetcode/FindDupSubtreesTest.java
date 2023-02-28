@@ -16,7 +16,9 @@ public class FindDupSubtreesTest {
         Arguments arg1 = Arguments.of(new TreeNode(1,
                                                    new TreeNode(2, new TreeNode(4), null),
                                                    new TreeNode(3,
-                                                                new TreeNode(2, new TreeNode(4), null),
+                                                                new TreeNode(2,
+                                                                             new TreeNode(4),
+                                                                             null),
                                                                 new TreeNode(4))),
                                       new ArrayList<TreeNode>() {{
                                           add(new TreeNode(2, new TreeNode(4), null));
@@ -35,12 +37,24 @@ public class FindDupSubtreesTest {
                                           add(new TreeNode(2, new TreeNode(3), null));
                                           add(new TreeNode(3));
                                       }});
-        return Stream.of(arg1, arg2, arg3);
+
+        Arguments arg4 = Arguments.of(new TreeNodeConverter().convert("0,0,0,0,null,null,0,0,0,0,0",
+                                                                      TreeNode.class),
+                                      new ArrayList<TreeNode>() {{
+                                          add((TreeNode) new TreeNodeConverter().convert("0,0,0",
+                                                                                         TreeNode.class));
+                                          add((TreeNode) new TreeNodeConverter().convert("0",
+                                                                                         TreeNode.class));
+                                      }});
+
+        return Stream.of(arg1, arg2, arg3, arg4);
     }
 
     @ParameterizedTest
     @MethodSource("provideArgument")
     public void test(TreeNode root, List<TreeNode> expected) {
-        Assertions.assertEquals(expected, new Solution1().findDuplicateSubtrees(root));
+        List<TreeNode> result = new Solution1().findDuplicateSubtrees(root);
+        Assertions.assertEquals(result.size(), expected.size());
+        Assertions.assertTrue(result.containsAll(expected));
     }
 }

@@ -13,7 +13,8 @@ public class SortAnArrayTest {
     static Stream<Arguments> provideArgument() {
         return Stream.of(
             Arguments.of(new int[]{5, 2, 3, 1}, new int[]{1, 2, 3, 5}),
-            Arguments.of(new int[]{5, 1, 1, 2, 0, 0}, new int[]{0, 0, 1, 1, 2, 5})
+            Arguments.of(new int[]{5, 1, 1, 2, 0, 0}, new int[]{0, 0, 1, 1, 2, 5}),
+            Arguments.of(new int[]{2, 2, 2, 2, 2}, new int[]{2, 2, 2, 2, 2})
         );
     }
 

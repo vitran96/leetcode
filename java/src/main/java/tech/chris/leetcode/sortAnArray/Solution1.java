@@ -1,36 +1,43 @@
 package tech.chris.leetcode.sortAnArray;
 
-import java.util.Arrays;
-
 public class Solution1 implements SortAnArray {
     @Override
     public int[] sortArray(int[] nums) {
-        int[] result = Arrays.copyOf(nums, nums.length);
-        quickSort(result, 0, result.length - 1);
-        return result;
+        mergeSort(nums, 0, nums.length - 1);
+        return nums;
     }
 
-    public void quickSort(int[] nums, int l, int r) {
+    private void mergeSort(int[] nums, int l, int r) {
         if (l >= r) {
             return;
         }
 
-        int pivot = nums[r];
-        int j = l - 1;
-        for (int i = l; i <= r - 1; i++) {
-            if (nums[i] < pivot) {
+        int mid = (l + r) / 2;
+        mergeSort(nums, l, mid);
+        mergeSort(nums, mid + 1, r);
+        mergeSort(nums, l, mid, r);
+    }
+
+    private void mergeSort(int[] nums, int l, int mid, int r) {
+        int[] L = new int[mid - l + 1];
+        int[] R = new int[r - mid];
+        System.arraycopy(nums, l, L, 0, L.length);
+        System.arraycopy(nums, mid + 1, R, 0, R.length);
+
+        int i = 0;
+        int j = 0;
+
+        int subArrayIndex = l;
+        while (i < L.length || j < R.length) {
+            if (L[i] <= R[i]) {
+                nums[subArrayIndex] = L[i];
+                i++;
+            } else {
+                nums[subArrayIndex] = R[j];
                 j++;
-                int temp = nums[i];
-                nums[i] = nums[j];
-                nums[j] = temp;
             }
+
+            subArrayIndex++;
         }
-
-        int temp = nums[j + 1];
-        nums[j + 1] = pivot;
-        nums[r] = temp;
-
-        quickSort(nums, l, j);
-        quickSort(nums, j + 2, r);
     }
 }

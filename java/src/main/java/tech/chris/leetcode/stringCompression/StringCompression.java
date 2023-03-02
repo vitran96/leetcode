@@ -13,5 +13,5 @@ package tech.chris.leetcode.stringCompression;
 // * 1 <= chars.length <= 2000
 // * chars[i] is a lowercase English letter, uppercase English letter, digit, or symbol.
 public interface StringCompression {
-    int compare(char[] chars);
+    int compress(char[] chars);
 }

@@ -22,14 +22,17 @@ public class Solution1 implements SortAnArray {
         int[] L = new int[mid - l + 1];
         int[] R = new int[r - mid];
         System.arraycopy(nums, l, L, 0, L.length);
-        System.arraycopy(nums, mid + 1, R, 0, R.length);
+
+        for (int i = 0; i < R.length; i++) {
+            R[i] = nums[mid + 1 + i];
+        }
 
         int i = 0;
         int j = 0;
 
         int subArrayIndex = l;
         while (i < L.length || j < R.length) {
-            if (L[i] <= R[i]) {
+            if (j >= R.length || i < L.length && L[i] <= R[j]) {
                 nums[subArrayIndex] = L[i];
                 i++;
             } else {

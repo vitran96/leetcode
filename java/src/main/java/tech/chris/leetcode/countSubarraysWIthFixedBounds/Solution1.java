@@ -11,8 +11,6 @@ public class Solution1 implements CountSubarraysWithFixedBounds {
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] < minK || nums[i] > maxK) {
                 l = i;
-                lastMin = -1;
-                lastMax = -1;
             }
 
             if (nums[i] == minK) {

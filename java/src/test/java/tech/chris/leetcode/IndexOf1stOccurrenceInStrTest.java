@@ -12,8 +12,8 @@ public class IndexOf1stOccurrenceInStrTest {
 
     static Stream<Arguments> provideArgument() {
         return Stream.of(
-            Arguments.of("sadbutsad", "sad"),
-            Arguments.of("leetcode", "leeto")
+            Arguments.of("sadbutsad", "sad", 0),
+            Arguments.of("leetcode", "leeto", -1)
         );
     }
 

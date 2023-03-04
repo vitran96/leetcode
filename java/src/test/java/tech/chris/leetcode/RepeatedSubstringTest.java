@@ -14,13 +14,16 @@ public class RepeatedSubstringTest {
         return Stream.of(
             Arguments.of("abab", true),
             Arguments.of("aba", false),
-            Arguments.of("abcabcabcabc", true)
+            Arguments.of("abcabcabcabc", true),
+            Arguments.of("ab", false),
+            Arguments.of("a", false),
+            Arguments.of("aabaaba", false)
         );
     }
 
     @ParameterizedTest
     @MethodSource("provideArgument")
-    public void test(String string, boolean expected) {
+    public void test1(String string, boolean expected) {
         Assertions.assertEquals(expected, new Solution1().repeatedSubstringPattern(string));
     }
 }

@@ -8,8 +8,8 @@ package tech.chris.leetcode.countSubarraysWIthFixedBounds;
 // A subarray is a contiguous part of an array.
 //
 // Constraints:
-// * 2<=nums.length<=105
-// * 1<=nums[i],minK,maxK<=106
+// * 2 <= nums.length <= 10^5
+// * 1 <= nums[i], minK, maxK <= 10^6
 public interface CountSubarraysWithFixedBounds {
     long countSubarrays(int[] nums, int minK, int maxK);
 }

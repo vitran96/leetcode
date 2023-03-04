@@ -12,7 +12,7 @@ public class CountSubarraysWithFixedBoundsTest {
 
     static Stream<Arguments> provideArgument() {
         return Stream.of(
-            Arguments.of(new int[]{7, 1, 5, 3, 6, 4}, 1, 5, 2),
+            Arguments.of(new int[]{1, 3, 5, 2, 7, 5}, 1, 5, 2),
             Arguments.of(new int[]{1, 1, 1, 1}, 1, 1, 10),
             Arguments.of(new int[]{3, 2, 4, 1, 3, 5, 2, 5, 3, 2, 4}, 1, 5, 24)
         );

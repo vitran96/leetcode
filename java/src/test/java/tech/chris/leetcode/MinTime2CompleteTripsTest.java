@@ -13,7 +13,9 @@ public class MinTime2CompleteTripsTest {
     static Stream<Arguments> provideArgument() {
         return Stream.of(
             Arguments.of(new int[]{1, 2, 3}, 5, 3),
-            Arguments.of(new int[]{2}, 1, 2)
+            Arguments.of(new int[]{2}, 1, 2),
+            Arguments.of(new int[]{1, 1, 7}, 5, 3),
+            Arguments.of(new int[]{7}, 5, 35)
         );
     }
 

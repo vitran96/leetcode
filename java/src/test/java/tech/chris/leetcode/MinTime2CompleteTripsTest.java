@@ -5,6 +5,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import tech.chris.leetcode.minTime2CompleteTrips.Solution1;
+import tech.chris.leetcode.minTime2CompleteTrips.Solution2;
 
 import java.util.stream.Stream;
 
@@ -21,7 +22,14 @@ public class MinTime2CompleteTripsTest {
 
     @ParameterizedTest
     @MethodSource("provideArgument")
-    public void test(int[] time, int totalTrips, int expected) {
+    public void test1(int[] time, int totalTrips, int expected) {
         Assertions.assertEquals(expected, new Solution1().minimumTime(time, totalTrips));
+    }
+
+    @ParameterizedTest
+    @MethodSource("provideArgument")
+
+    public void test2(int[] time, int totalTrips, int expected) {
+        Assertions.assertEquals(expected, new Solution2().minimumTime(time, totalTrips));
     }
 }

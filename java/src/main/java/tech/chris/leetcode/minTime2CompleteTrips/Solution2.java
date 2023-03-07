@@ -6,6 +6,9 @@ package tech.chris.leetcode.minTime2CompleteTrips;
  * else use formula
  * Eg: assume time.length == 3 where each item name is a, b, and c
  * result = (a*b*c*totalTrips) / (a*c + a*b + b*c)
+ * <p>
+ * => FAILED
+ * Fraction should not be considered
  */
 public class Solution2 implements MinTime2CompleteTrips {
     @Override

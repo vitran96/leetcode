@@ -3,6 +3,11 @@ package tech.chris.leetcode.minTime2CompleteTrips;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This take too long
+ * Time: O(n^2)
+ * Space: O(n)
+ */
 public class Solution1 implements MinTime2CompleteTrips {
     @Override
     public long minimumTime(int[] time, int totalTrips) {

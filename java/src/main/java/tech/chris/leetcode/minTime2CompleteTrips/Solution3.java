@@ -6,6 +6,7 @@ package tech.chris.leetcode.minTime2CompleteTrips;
  * Then iterate and find new predicted time until lowerbound is >= totalTrips.
  * <p>
  * ONLINE SOLUTION!
+ * Can be optimized
  */
 public class Solution3 implements MinTime2CompleteTrips {
     @Override

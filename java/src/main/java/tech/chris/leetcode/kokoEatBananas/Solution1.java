@@ -1,5 +1,6 @@
 package tech.chris.leetcode.kokoEatBananas;
 
+// Can be optimized to reduce performance 6 time
 public class Solution1 implements KokoEatBananas {
     @Override
     public int minEatingSpeed(int[] piles, int h) {

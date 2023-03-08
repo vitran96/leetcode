@@ -14,7 +14,8 @@ public class KokoEatBananasTest {
         return Stream.of(
             Arguments.of(new int[]{3, 6, 7, 11}, 8, 4),
             Arguments.of(new int[]{30, 11, 23, 4, 20}, 5, 30),
-            Arguments.of(new int[]{30, 11, 23, 4, 20}, 6, 23)
+            Arguments.of(new int[]{30, 11, 23, 4, 20}, 6, 23),
+            Arguments.of(new int[]{312884470}, 312884469, 2)
         );
     }
 

@@ -19,7 +19,7 @@ public class KthMissingPositiveNumberTest {
 
     @ParameterizedTest
     @MethodSource("provideArgument")
-    public void test(int[] input, int expected) {
-        Assertions.assertEquals(expected, new Solution1().maxProfit(input));
+    public void test(int[] arr, int k, int expected) {
+        Assertions.assertEquals(expected, new Solution1().findKthPositive(arr, k));
     }
 }

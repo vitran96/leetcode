@@ -5,6 +5,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import tech.chris.leetcode.linkedListCycle2.Solution1;
+import tech.chris.leetcode.linkedListCycle2.Solution2;
 
 import java.util.stream.Stream;
 
@@ -35,7 +36,13 @@ public class LinkedListCycle2Test {
 
     @ParameterizedTest
     @MethodSource("provideArgument")
-    public void test(ListNode head, ListNode expected) {
+    public void test1(ListNode head, ListNode expected) {
         Assertions.assertSame(expected, new Solution1().detectCycle(head));
+    }
+
+    @ParameterizedTest
+    @MethodSource("provideArgument")
+    public void test2(ListNode head, ListNode expected) {
+        Assertions.assertSame(expected, new Solution2().detectCycle(head));
     }
 }

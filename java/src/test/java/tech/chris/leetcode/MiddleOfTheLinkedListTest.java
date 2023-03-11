@@ -5,6 +5,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import tech.chris.leetcode.middleOfTheLinkedList.Solution1;
+import tech.chris.leetcode.middleOfTheLinkedList.Solution2;
 
 import java.util.stream.Stream;
 
@@ -31,5 +32,11 @@ public class MiddleOfTheLinkedListTest {
     @MethodSource("provideArgument")
     public void test1(ListNode head, ListNode expected) {
         Assertions.assertSame(expected, new Solution1().middleNode(head));
+    }
+
+    @ParameterizedTest
+    @MethodSource("provideArgument")
+    public void test2(ListNode head, ListNode expected) {
+        Assertions.assertSame(expected, new Solution2().middleNode(head));
     }
 }

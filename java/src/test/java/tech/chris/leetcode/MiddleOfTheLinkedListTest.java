@@ -13,7 +13,7 @@ public class MiddleOfTheLinkedListTest {
     private static Arguments makeArgument(final String source, int middleNodeIndex) {
         ListNode head = (ListNode) ListNodeConverter.convert(source, -1);
         ListNode current = head;
-        while (middleNodeIndex > -1) {
+        while (middleNodeIndex != 0) {
             current = current.next;
             middleNodeIndex--;
         }
@@ -23,12 +23,13 @@ public class MiddleOfTheLinkedListTest {
 
     static Stream<Arguments> provideArgument() {
         return Stream.of(makeArgument("1,2,3,4,5", 2),
-                         makeArgument("1,2,3,4,5,6", 3));
+                         makeArgument("1,2,3,4,5,6", 3),
+                         Arguments.of(null, null));
     }
 
     @ParameterizedTest
     @MethodSource("provideArgument")
     public void test1(ListNode head, ListNode expected) {
-        Assertions.assertSamdde(expected, new Solution1().middleNode(head));
+        Assertions.assertSame(expected, new Solution1().middleNode(head));
     }
 }
